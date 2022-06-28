@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts.js"></script>
+  </head>
+  <body>
+    <div id="pre-vedio">
+      <video playsinline autoplay muted loop id="vedio">
+        <source
+          type="video/mp4"
+          src="https://static.videezy.com/system/resources/previews/000/039/892/original/binary_code_background3.mp4"
+        />
+      </video>
+    </div>
+    <div class="container">
+      <label for="binary">Enter the Binary</label>
+      <div class="binary-container">
+        <input type="text" name="binary" id="binary" />
+        <button id="reset"><span><<</span></button>
+      </div>
+      <span id="decimal" class="anim-text">0</span>
+    </div>
+
+    <script>
+      "use strict";
+
+      const Binary = new Grab("#binary");
+      const Decimal = new Grab("#decimal");
+      const Reset = new Grab("#reset");
+
+      const scramble = new ShuffleText(Decimal.el);
+      // console.log(scramble);
+      let timeOut;
+
+      Reset.on("click", () => {
+        scramble.start().then((e) => {
+          Binary.el.value = "";
+          Decimal.el.innerText = "0";
+        });
+      });
+
+      Binary.on("keydown", (e) => {
+        if (
+          !(
+            e.code === "Numpad1" ||
+            e.code === "Digit1" ||
+            e.code === "Numpad0" ||
+            e.code === "Digit0" ||
+            e.code === "Backspace" ||
+            e.code === "ArrowRight" ||
+            e.code === "ArrowLeft"
+          )
+        ) {
+          e.preventDefault();
+        }
+      })
+        .on("input", (e) => {
+          let value = e.target.value;
+          if (/^[01]+$/g.test(value)) {
+            Decimal.el.innerHTML = parseInt(value, 2);
+          }
+          if (!(e.target.value.length === 0)) {
+            scramble.start();
+          }
+          if (e.target.value.length === 0) {
+            Decimal.el.innerText = "0";
+          }
+        })
+        .on("keyup", (e) => {
+          if (e.target.value.length === 0) {
+            Decimal.el.innerText = "0";
+          }
+        });
+    </script>
+  </body>
+</html>
