@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  user-select: none;
+}
+
+.calculator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 4px;
+  border-radius: 8px;
+  background-color: rgba(128, 128, 128, 0.25);
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  background-color: #eee;
+  padding: 0.6rem 1rem;
+  margin-bottom: 4px;
+}
+
+.history {
+  color: grey;
+  font-weight: 600;
+}
+
+.result {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.controls {
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  gap: 4px;
+  flex-direction: row;
+}
+
+.row:last-child {
+  justify-content: flex-end;
+}
+
+.pad {
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 1.4rem;
+  padding: 2rem;
+  color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  width: 2rem;
+  height: 2rem;
+  background-color: #eee;
+}
+
+.pad:hover {
+  box-shadow: 0px 0px 4px rgba(128, 128, 128, 0.5);
+}

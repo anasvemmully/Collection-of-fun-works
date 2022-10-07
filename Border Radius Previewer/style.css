@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400;500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200;1,400&family=Press+Start+2P&family=Source+Code+Pro:wght@200&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+
+*,
+*::after,
+*::before {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+
+body {
+  background-color: rgba(239, 239, 239, 0.6);
+}
+
+.container {
+  width: 60vmin;
+  height: 60vmin;
+  border: 2px dashed rgba(57, 55, 55, 0.4);
+  border-radius: 4px;
+  position: absolute;
+  z-index: 3;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#box {
+  width: 100%;
+  height: 100%;
+  background: #f09;
+  background-image: linear-gradient(45deg, #3023ae 0%, #f09 100%);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+
+  box-shadow: -4rem 2rem 1rem rgba(103, 101, 101, 0.3);
+}
+
+.slider {
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  left: 0.75rem;
+  top: 0.75rem;
+  background: #fff;
+  border: 2px solid #002;
+  transition: box-shadow 0.2s ease-out;
+  will-change: box-shadow;
+}
+
+#left {
+  left: -1.25rem;
+  top: 30%;
+  transform: translateY(-50%);
+}
+
+#right {
+  right: -1.25rem;
+  top: 30%;
+  transform: translateY(-50%);
+}
+
+#top {
+  top: -1.25rem;
+  left: 30%;
+  transform: translateX(-50%);
+}
+
+#bottom {
+  bottom: -1.25rem;
+  left: 30%;
+  transform: translateX(-50%);
+}
+
+#left::after {
+  top: 0.75rem;
+  right: 150%;
+}
+#right::after {
+  top: 0.75rem;
+  left: 150%;
+}
+#top::after {
+  bottom: 150%;
+  right: 30%;
+}
+#bottom::after {
+  top: 150%;
+  right: 30%;
+}
+
+.copy-container {
+  background-color: #eee;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-left: 1.4rem; */
+}
+.copy-container > button#css-copy {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: bold;
+  justify-items: center;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+#clip {
+  height: 2rem;
+}
+
+#border-style {
+  position: relative;
+  background-color: rgba(39, 25, 80, 0.2);
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 1.2rem;
+  font-family: "M PLUS 1 Code", sans-serif;
+}
+
+.svg-collection {
+  position: relative;
+}
+
+#click {
+  position: absolute;
+  height: 1.4rem;
+  bottom: 0%;
+  right: -0.2rem;
+}
+
+#css-copy:hover {
+  animation: load 1.3s 0.4s ease-in-out infinite;
+  transform: scale(1.0234);
+  border-radius: 4px;
+}
+#tick {
+  height: 1.6rem;
+}
+
+.copy {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  font-family: "Poppins", sans-serif;
+  transform: translate(-50%, -50%);
+  padding: 0.2rem 0.8rem;
+  color: rgb(3, 72, 3);
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes load {
+  0% {
+    background: #fff;
+    border: 0px solid #fff;
+    box-shadow: 0px 0px 0px black;
+  }
+  50% {
+    background: #fff;
+    border: 1px solid #222;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0,0.5);
+  }
+  100% {
+    background: #fff;
+    border: 0px solid #222;
+    box-shadow: 0px 0px 0px black;
+  }
+}
